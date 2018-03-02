@@ -53,6 +53,16 @@ public class TimerTriggerTests extends AbstractStateMachineTests {
 	}
 
 	@Test
+	public void testGetters(){
+		//coverage stuff
+		context.register(BaseConfig.class, Config1.class);
+		context.refresh();
+		TimerTrigger timerTrigger = context.getBean(TimerTrigger.class);
+		assertThat(timerTrigger.getCount(), is(0));
+		assertThat(timerTrigger.getPeriod(), is(100L));
+	}
+
+	@Test
 	public void testListenerEvents() throws Exception {
 		context.register(BaseConfig.class, Config1.class);
 		context.refresh();

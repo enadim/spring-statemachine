@@ -57,6 +57,24 @@ public class TimerTrigger<S, E> extends LifecycleObjectSupport implements Trigge
 		this.count = count;
 	}
 
+	/**
+	 * Trigger period getter.
+	 *
+	 * @return the trigger period.
+	 */
+	public long getPeriod() {
+		return period;
+	}
+
+	/**
+	 * Trigger count getter.
+	 *
+	 * @return the trigger count.
+	 */
+	public int getCount() {
+		return count;
+	}
+
 	@Override
 	public boolean evaluate(TriggerContext<S, E> context) {
 		return false;
